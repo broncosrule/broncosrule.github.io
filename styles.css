@@ -29,6 +29,18 @@ section{ padding: 30px 15px; }
 
 #coming-soon { background:#85a0ad; }
 
+/****Navigation Styles****/
+#navigation {position: relative;}
+
+#mobilenav {background-color: #f69331;
+            margin-bottom: 20px;
+		    padding-right: 20px;}
+
+#mobilenav h2 {text-align: right;
+               line-height: 50px;
+			   color: #ebebeb;
+			   font-size: 36px;}
+			   
 /****Top section styles***/
 #top {padding: 0;
       display: flex;}
