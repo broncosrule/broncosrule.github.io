@@ -1,104 +1,192 @@
-h1, h2, h3, p, ol, ul {
+/********* CSS RESETS **********/
+
+img {
+	max-width: 100%;
+}
+
+h1, h2, h3, p, ul, ol {
 	margin: 0;
 	padding: 0;
 }
 
-* { box-sizing:border-box; }
-
-img { max-width:100%; }
-
-/************* End CSS RESETS **************/
+/********* End CSS Reset *********/
 
 body {
-	background:url(images/paper.png);
-	color: #424242;
-	font-family: 'Source Sans Pro', sans-serif;
-	padding: 30px 0;
-}
-
-#page {
-	max-width: 980px;
-	margin: auto;
+	font-family: 'Open Sans Condensed', sans-serif;
+	font-weight:300;
+	color:#ebebeb;
 }
 
 header {
-	border-bottom: 3px solid #424242;
-	padding-bottom: 20px;
+	padding-bottom:15px 20px 15px;
 }
 
-header, footer {
-	margin: 0 10px;
-}
-section {
-	padding:20px 0;
-}
+section{ padding: 30px 15px; }
 
+#new-release { background:#ebebeb; }
+
+#coming-soon { background:#85a0ad; }
+
+/****Top section styles***/
+#top {padding: 0;
+      display: flex;}
+
+#top article {padding: 15px;}
+
+#top article:first-of-type { background:#85a0ad; }
+
+#top article:last-of-type { background:#793f04; }
+
+/********** Footer Rules **********/
 footer {
-	border-top: 3px solid #424242;
-	padding-top: 20px;
+	display: flex;
+	background:#793f04;
+	padding:15px;
 }
 
-#about {
-	padding: 10px;
+footer section {
+	flex:1;
+	padding: 15px 0;
 }
 
-#projects {
-	padding: 10px;
+footer section:last-of-type{
+	padding-left: 5px;
+	padding-top: 30px;
 }
 
-.alignleft {
-	float: left;
-	margin: 0 10px 5px 0;
-}
-
-/************ typography *************/
-
-h1, h2, h3 {
-	font-family: 'Bitter', serif;
-	margin-bottom:.5em;
-}
+/********** Typography Rules **********/
 
 h1 {
-	font-size:150%;
 	text-transform:uppercase;
+	font-weight:700;
 }
 
-header h1 {
-	font-size:300%;
-	margin-bottom:.1em;
+h2 {
+	font-size:36px;
+	text-transform:uppercase;
+	font-weight:700;
 }
 
-p {
-	line-height:1.5em;
-	margin-bottom:1em;
+p { line-height: 1.3em; }
+
+#new-release h2 { color:#303030; }
+
+/************ Logo Styles ***************/
+header h1 { 
+	font-size: 20vw;
+	text-align: center;
+	letter-spacing:-4px;
 }
 
-ul, ol {
-	margin-bottom:1em;
-	padding-left:1.2em;
+header h2 { 
+	color: #303030;
 }
 
-li {
-	margin-bottom:.5em;
+header div:last-of-type {
+	text-align: center;
 }
 
-a {
-	text-decoration:none;
-	color:#045685;
-}
+footer h1 { font-size: 10vw; }
 
-a:hover {
-	text-decoration:underline;
-}
+footer h2 { font-size: 24px; }
 
-@media only screen and (min-width: 600px) {
+.audio { color:#f69331; }
+
+.space { color:#40606f; }
+
+footer .space { color:#bdd4de; }
+
+.grid {padding: 15px 0;
+       display: grid;
+       grid-template-columns: 1fr 1fr;
+       grid-gap: 30px;}
+
+/************ Card Flip Styles **************/
+
+.flip-container { perspective: 1000px; }
 	
-	main { display: flex;}
-	#about { flex: 2; }
-	#projects { flex: 1; }
-	
+.flip-container.hover .back {
+	transform: rotateY(0deg);
 }
 
+.flip-container.hover .front {
+    transform: rotateY(180deg);
+}
 
-	
+.flip-container, .front, .back {
+	width: 100%;
+}
 
+.flipper {
+	transition: 0.6s;
+	transform-style: preserve-3d;
+
+	position: relative;
+	height: 0;
+	padding-top:100%;
+}
+
+.front, .back {
+	-webkit-backface-visibility: hidden; /*still needed for safari & android*/
+	backface-visibility: hidden;
+	transition: 0.6s;
+	transform-style: preserve-3d;
+
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+}
+
+.front { transform: rotateY(0deg); z-index: 2; }
+
+.back {
+	transform: rotateY(-180deg);
+	background:#f69331;
+	padding:10px;
+	box-sizing: border-box;
+}
+
+.front img {
+	display:block;
+}
+
+.title {
+	text-transform:uppercase;
+	font-size:14px;
+}
+
+.name {
+	margin-bottom:10px;
+	font-weight:700;
+	color:#40606f;
+}
+
+@media only screen and (min-width: 600px) 
+{
+	.grid {grid-template-columns: 1fr 1fr 1fr 1fr;}
+
+    header {display: flex;
+            padding-bottom: 0px;}
+
+    header div {flex: 1;
+                padding: 15px;}
+
+    header h1 {font-size: 10vw;}
+
+    header h2 {font-size: 3.6vw;}
+
+    header img {width: 100%;}
+
+    #top p, footer p {font-size: 24px;}
+}
+
+@media only screen and (min-width: 960px) 
+{
+    #page {width: 960px;
+          margin: auto;}
+    
+    header h1, footer h1 {font-size: 100px;}
+
+    header h2 {font-size: 36px;}
+}
