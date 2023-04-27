@@ -216,6 +216,19 @@ footer .space { color:#bdd4de; }
     header img {width: 100%;}
 
     #top p, footer p {font-size: 24px;}
+
+	#mobilenav {display: none;}
+
+	#mainnvav {box-sizing: border-box;
+	           position: static;
+			   width: 1000px;
+			   margin-bottom: 20px;
+			   border-top: none;
+			   border-left: 1px solid #ca6a0c;}
+
+	#mainnav ul {display: flex;}
+
+	#mainnav ul li {flex: 1;}
 }
 
 @media only screen and (min-width: 960px) 
@@ -226,4 +239,11 @@ footer .space { color:#bdd4de; }
     header h1, footer h1 {font-size: 100px;}
 
     header h2 {font-size: 36px;}
+
+	#mainnav ul li a {width: 100%;
+	                  box-sizing: border-box;
+					  padding: 0px;
+					  text-align: center;
+					  border-bottom: none;
+					  border-right: 1px solid #ca6a0c;;}
 }
