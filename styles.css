@@ -40,7 +40,14 @@ section{ padding: 30px 15px; }
                line-height: 50px;
 			   color: #ebebeb;
 			   font-size: 36px;}
-			   
+
+#mainnav {width: 200px;
+          position: absolute;
+		  top: 50px;
+		  right: 0px;
+		  border-top: 1px solid #ca6a0c;}
+
+#mainnav ul {background: #f69331;}
 /****Top section styles***/
 #top {padding: 0;
       display: flex;}
